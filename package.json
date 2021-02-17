@@ -1,0 +1,32 @@
+{
+  "name": "cidr-block-check",
+  "version": "1.0.0",
+  "description": "Checks if a given IP address is part of a given CIDR block.",
+  "main": "cidrBlockCheck.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piraluc/cidr-block-check.git"
+  },
+  "keywords": [
+    "CIDR",
+    "IP-Address"
+  ],
+  "author": "Luca Piras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piraluc/cidr-block-check/issues"
+  },
+  "homepage": "https://github.com/piraluc/cidr-block-check#readme",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0"
+  },
+  "dependencies": {
+    "is-cidr": "^4.0.2",
+    "is-ip": "^3.1.0"
+  }
+}
