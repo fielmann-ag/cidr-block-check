@@ -1,6 +1,6 @@
 {
   "name": "cidr-block-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checks if a given IP address is part of a given CIDR block.",
   "main": "cidrBlockCheck.js",
   "type": "module",
