@@ -23,7 +23,7 @@ const cidrBlockCheck = {
             let cidrUnsigned32Bit = 0;
             let ipUnsigned32Bit = 0;
 
-            [24, 16, 8, 0].forEach((shiftBy, index) => {
+            [24, 16, 8, 0].map((shiftBy, index) => {
                 cidrUnsigned32Bit = cidrUnsigned32Bit + ((cidrOctetList[index] << shiftBy) >>> 0);
                 ipUnsigned32Bit = ipUnsigned32Bit + ((ipOctetList[index] << shiftBy) >>> 0);
             });

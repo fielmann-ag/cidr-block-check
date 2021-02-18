@@ -116,7 +116,7 @@ describe('unit tests', () => {
 describe('benchmark', () => {
     const buildTestSet = (size) => {
         const set = [];
-        [...Array(size-1).keys()].forEach(() => {
+        [...Array(size-1).keys()].map(() => {
             const cidr = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 255)).join('.') + '/' + (Math.floor(Math.random() * 33));
             const ip = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 255)).join('.');
             set.push([cidr, ip]);
@@ -124,7 +124,7 @@ describe('benchmark', () => {
         return set;
     };
 
-    [10000, 25000, 100000, 1000000, 10000000].forEach((size) => {
+    [10000, 25000, 100000, 1000000, 10000000].map((size) => {
         const set =  buildTestSet(size);
         it(size.toLocaleString(), () => {
             set.map((sample) => cidrBlockCheck.v4.isInBlock(sample[0], sample[1]));
