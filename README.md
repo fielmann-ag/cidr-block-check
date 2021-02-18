@@ -1,4 +1,4 @@
-# cidr-block-check
+# cidr-block-check [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) ![build](https://github.com/piraluc/cidr-block-check/actions/workflows/node.js.yml/badge.svg)
 NPM module that checks if a given IP address is part of a given CIDR block.
 
 Details about CIDR can be found [here](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
