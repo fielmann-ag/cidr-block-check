@@ -117,8 +117,8 @@ describe('benchmark', () => {
     const buildTestSet = (size) => {
         const set = [];
         [...Array(size-1).keys()].map(() => {
-            const cidr = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 254) + 1).join('.') + '/' + (Math.floor(Math.random() * 32) + 1);
-            const ip = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 254) + 1).join('.');
+            const cidr = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 255)).join('.') + '/' + (Math.floor(Math.random() * 33));
+            const ip = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 255)).join('.');
             set.push([cidr, ip]);
         });
         return set;
