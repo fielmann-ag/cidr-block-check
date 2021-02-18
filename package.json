@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/piraluc/cidr-block-check.git"
+    "url": "git+https://github.com/fielmann-ag/cidr-block-check.git"
   },
   "keywords": [
     "CIDR",
@@ -19,9 +19,9 @@
   "author": "Luca Piras",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/piraluc/cidr-block-check/issues"
+    "url": "https://github.com/fielmann-ag/cidr-block-check/issues"
   },
-  "homepage": "https://github.com/piraluc/cidr-block-check#readme",
+  "homepage": "https://github.com/fielmann-ag/cidr-block-check#readme",
   "devDependencies": {
     "chai": "^4.3.0",
     "mocha": "^8.3.0"
