@@ -3,7 +3,7 @@ import {expect} from 'chai';
 import {describe, it} from "mocha";
 import {AssertionError} from 'assert'
 
-describe('unit tests IPv4', () => {
+describe('unit tests', () => {
     it('When IP addresses match Then true is returned', () => {
         // arrange
         const cidrBlock = '192.168.1.23/28';
@@ -88,7 +88,7 @@ describe('unit tests IPv4', () => {
         expect(result).to.throw(AssertionError, /IP/);
     });
 
-    describe('stress test', () => {
+    describe('variant set test', () => {
         [
             ['55.27.53.70/0', '100.65.201.133', true],
             ['128.27.53.70/1', '167.65.201.133', true],
@@ -110,5 +110,24 @@ describe('unit tests IPv4', () => {
                 expect(result).to.equal(expected);
             });
         });
+    });
+});
+
+describe('benchmark', () => {
+    const buildTestSet = (size) => {
+        const set = [];
+        [...Array(size-1).keys()].map(() => {
+            const cidr = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 254) + 1).join('.') + '/' + (Math.floor(Math.random() * 32) + 1);
+            const ip = [0, 1, 2, 3].map(() => Math.floor(Math.random() * 254) + 1).join('.');
+            set.push([cidr, ip]);
+        });
+        return set;
+    };
+
+    [10000, 25000, 100000, 1000000].map((size) => {
+        const set =  buildTestSet(size);
+        it(size.toLocaleString(), () => {
+            set.map((sample) => cidrBlockCheck.v4.isInBlock(sample[0], sample[1]));
+        }).timeout(0);
     });
 });
