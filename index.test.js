@@ -1,6 +1,7 @@
 import cidrBlockCheck from './index.js';
 import {expect} from 'chai';
 import {describe, it} from "mocha";
+import {AssertionError} from 'assert'
 
 describe('unit tests IPv4', () => {
     it('When IP addresses match Then true is returned', () => {
@@ -61,6 +62,30 @@ describe('unit tests IPv4', () => {
 
         // assert
         expect(result).to.be.true;
+    });
+
+    it('When CIDR is not valid Then assertion error is thrown', () => {
+        // arrange
+        const cidrBlock = 'this_is_not_a_valid_cidr_block';
+        const ipAddress = '192.168.1.42';
+
+        // act
+        const result = () => cidrBlockCheck.v4.isInBlock(cidrBlock, ipAddress);
+
+        // assert
+        expect(result).to.throw(AssertionError, /CIDR/);
+    });
+
+    it('When IP is not valid Then assertion error is thrown', () => {
+        // arrange
+        const cidrBlock = '192.168.1.42/32';
+        const ipAddress = 'not_a_valid_ip_address';
+
+        // act
+        const result = () => cidrBlockCheck.v4.isInBlock(cidrBlock, ipAddress);
+
+        // assert
+        expect(result).to.throw(AssertionError, /IP/);
     });
 
     describe('stress test', () => {
