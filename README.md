@@ -3,10 +3,12 @@ NPM module that checks if a given IP address is part of a given CIDR block.
 
 Details about CIDR can be found [here](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 
-## Usage
+## Installation
 ```sh
 npm i cidr-block-check
 ```
+
+## Usage
 
 ```js
 import cidrBlockCheck from 'cidr-block-check';
