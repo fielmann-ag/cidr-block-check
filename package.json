@@ -5,7 +5,7 @@
   "main": "cidrBlockCheck.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --parallel -g 'unit tests' index.test.js",
+    "test": "mocha -g 'unit tests' index.test.js",
     "benchmark": "mocha --parallel -g 'benchmark' index.test.js"
   },
   "repository": {
