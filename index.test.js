@@ -88,29 +88,29 @@ describe('unit tests', () => {
         expect(result).to.throw(AssertionError, /IP/);
     });
 
-    describe('variant set test', () => {
-        [
-            ['55.27.53.70/0', '100.65.201.133', true],
-            ['128.27.53.70/1', '167.65.201.133', true],
-            ['128.27.53.70/1', '127.65.201.133', false],
-            ['56.53.60.205/2', '62.207.53.222', true],
-            ['191.53.60.205/2', '192.207.53.222', false],
-            ['100.65.201.133/3', '97.207.53.222', true]
-        ].forEach((testCase) => {
-            // arrange
-            const cidrBlock = testCase[0];
-            const ipAddress = testCase[1];
-            const expected = testCase[2];
+    // describe('variant set test', () => {
+    //     [
+    //         ['55.27.53.70/0', '100.65.201.133', true],
+    //         ['128.27.53.70/1', '167.65.201.133', true],
+    //         ['128.27.53.70/1', '127.65.201.133', false],
+    //         ['56.53.60.205/2', '62.207.53.222', true],
+    //         ['191.53.60.205/2', '192.207.53.222', false],
+    //         ['100.65.201.133/3', '97.207.53.222', true]
+    //     ].forEach((testCase) => {
+    //         // arrange
+    //         const cidrBlock = testCase[0];
+    //         const ipAddress = testCase[1];
+    //         const expected = testCase[2];
 
-            it(`When CIDR is ${cidrBlock} and IP is ${ipAddress} Then ${expected} is returned`, () => {
-                // act
-                const result = cidrBlockCheck.v4.isInBlock(cidrBlock, ipAddress);
+    //         it(`When CIDR is ${cidrBlock} and IP is ${ipAddress} Then ${expected} is returned`, () => {
+    //             // act
+    //             const result = cidrBlockCheck.v4.isInBlock(cidrBlock, ipAddress);
 
-                // assert
-                expect(result).to.equal(expected);
-            });
-        });
-    });
+    //             // assert
+    //             expect(result).to.equal(expected);
+    //         });
+    //     });
+    // });
 });
 
 describe('benchmark', () => {
