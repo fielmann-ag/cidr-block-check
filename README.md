@@ -13,7 +13,7 @@ npm i cidr-block-check
 ```js
 import cidrBlockCheck from 'cidr-block-check';
 
-const cidr = '192.168.1.17/22';
+const cidr = '192.168.0.0/22';
 const ip = '192.168.2.10';
 
 console.log(cidrBlockCheck.v4.isInBlock(cidr,ip));
