@@ -2,7 +2,7 @@ import assert from 'assert';
 import isCidr from 'is-cidr';
 import isIp from 'is-ip';
 
-class CidrBlockCheck {
+export class CidrBlockCheck {
     static get v4() {
         return {
             isInBlock: (cidrBlock, ip) => {
@@ -37,5 +37,3 @@ class CidrBlockCheck {
         };
     };
 };
-
-export default CidrBlockCheck;

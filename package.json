@@ -24,7 +24,7 @@
   "homepage": "https://github.com/fielmann-ag/cidr-block-check#readme",
   "devDependencies": {
     "chai": "^4.3.0",
-    "mocha": "^8.3.0"
+    "mocha": "^9.1.0"
   },
   "dependencies": {
     "heapdump": "^0.3.15",

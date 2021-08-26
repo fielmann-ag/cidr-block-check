@@ -1,4 +1,4 @@
-import CidrBlockCheck from './index.js';
+import {CidrBlockCheck} from './index.js';
 import {expect} from 'chai';
 import {describe, it} from "mocha";
 import {AssertionError} from 'assert';
