@@ -27,6 +27,7 @@
     "mocha": "^8.3.0"
   },
   "dependencies": {
+    "heapdump": "^0.3.15",
     "is-cidr": "^4.0.2",
     "is-ip": "^3.1.0"
   }
